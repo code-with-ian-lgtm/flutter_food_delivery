@@ -3,6 +3,8 @@ class food{
   final String description;
   final String imagePath;
   final String price;
+  final FoodCategory category;
+  List<Addon> availableAddons;
 
 
   food({
@@ -10,6 +12,8 @@ class food{
     required this.description,
     required this.imagePath,
     required this.price,
+    required this.category,
+    required this.availableAddons,
   });
 }
 
