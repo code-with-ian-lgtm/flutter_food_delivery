@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_delivery/components/my_button.dart';
 import 'package:food_delivery/components/my_textfield.dart';
+import 'package:food_delivery/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -23,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
 
   //login method
   void login(){
-    
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
 
   }
 
@@ -71,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                   
           //sign in button
           MyButton(
-            onTap: () {}, 
+            onTap: login, 
             text: "Sign in"),
 
 
