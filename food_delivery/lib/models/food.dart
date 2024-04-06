@@ -1,4 +1,4 @@
-class food{
+class Food{
   final String name;
   final String description;
   final String imagePath;
@@ -7,7 +7,7 @@ class food{
   List<Addon> availableAddons;
 
 
-  food({
+  Food({
     required this.name,
     required this.description,
     required this.imagePath,

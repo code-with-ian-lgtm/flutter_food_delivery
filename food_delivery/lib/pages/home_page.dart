@@ -33,14 +33,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   }
   
   //sort out and return a list of food items that belog to a specific category
-  List<food>_filterMenuByCategory(FoodCategory category, List<food> fullMenu){
+  List<Food>_filterMenuByCategory(FoodCategory category, List<Food> fullMenu){
     return fullMenu.where((food) => food.category == category).toList();
   }
 
   //return list of foods in a given category
-  List<Widget> getFoodInThisCategory(List<food> fullMenu){
+  List<Widget> getFoodInThisCategory(List<Food> fullMenu){
     return FoodCategory.values.map((category) {
-      List<food> categoryMenu = _filterMenuByCategory(category, fullMenu);
+      List<Food> categoryMenu = _filterMenuByCategory(category, fullMenu);
       return ListView.builder(
         itemCount: categoryMenu.length,
         physics: const NeverScrollableScrollPhysics(),

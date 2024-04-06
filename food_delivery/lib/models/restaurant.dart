@@ -1,16 +1,16 @@
 
 
-// import 'package:food_delivery/models/food.dart';
+// import 'package:Food_delivery/models/Food.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/models/food.dart';
 
-import 'food.dart';
 
 class Restaurant extends ChangeNotifier{
-  //list of food menu
+  //list of Food menu
 
-  final List<food> _menu = [
+  final List<Food> _menu = [
     //burgers
-    food(name: "Classic cheese Burger", 
+    Food(name: "Classic cheese Burger", 
     description: "A juicy beef patty with melted cheddar, lettuce, tomato", 
     imagePath: "lib/images/burger/b1.jpg",
     price: "800/=", 
@@ -22,7 +22,7 @@ class Restaurant extends ChangeNotifier{
 
 
     ]),
-    food(name: "Juicy stack burger", 
+    Food(name: "Juicy stack burger", 
     description: "Layers of savory, juicy bliss.",
      imagePath: "lib/images/burger/b2.jpg",
       price: "1200/=", 
@@ -33,7 +33,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Fried egg", price: 20),
 
       ]),
-      food(name: "Flavour fusion", 
+      Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
       price: "700/=", 
@@ -44,7 +44,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Fried green tomatoes", price: 70),
 
       ]),
-      food(name: "Burger blast",
+      Food(name: "Burger blast",
       description: "Triple the flavor,triple satisfaction",
        imagePath: "lib/images/burger/b4.jpg",
         price: "700", 
@@ -58,7 +58,7 @@ class Restaurant extends ChangeNotifier{
 
 
     //salads
-    food(name: "Garden Harvest Medley", 
+    Food(name: "Garden Harvest Medley", 
       description: "Fresh veggies, crisp greens, wholesome.", 
       imagePath: "lib/images/salads/s1.jpg", 
       price: "200/=", 
@@ -69,7 +69,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Feta or goat cheese crumbles", price: 70),
 
       ]),
-      food(name: "Dried cranberries or raisins", 
+      Food(name: "Dried cranberries or raisins", 
       description: "Tangy zest, crunchy bites, refreshing.", 
       imagePath: "lib/images/salads/s2.jpg", 
       price: "150/=", 
@@ -80,7 +80,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Sliced hard-boiled eggs", price: 70),
 
       ]),
-      food(name: "Mediterranean Bliss Bowl", 
+      Food(name: "Mediterranean Bliss Bowl", 
       description: " Olives, feta, herbs, Mediterranean essence.", 
       imagePath: "lib/images/salads/s3.jpg", 
       price: "300/=", 
@@ -91,7 +91,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Edamame beans", price: 70),
 
       ]),
-      food(name: "Asian Fusion Salad Supreme", 
+      Food(name: "Asian Fusion Salad Supreme", 
       description: "ibrant flavors, crunchy textures, exotic.", 
       imagePath: "lib/images/salads/s3.jpg", 
       price: "50/=", 
@@ -106,7 +106,7 @@ class Restaurant extends ChangeNotifier{
 
 
     //sides
-    food(name: "Flavour fusion", 
+    Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
       price: "700/=", 
@@ -116,7 +116,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Pickled jalapenos", price: 170),
         Addon(name: "Fried green tomatoes", price: 70),
 
-      ]),food(name: "Flavour fusion", 
+      ]),Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
       price: "700/=", 
@@ -126,7 +126,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Pickled jalapenos", price: 170),
         Addon(name: "Fried green tomatoes", price: 70),
 
-      ]),food(name: "Flavour fusion", 
+      ]),Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
       price: "700/=", 
@@ -136,7 +136,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Pickled jalapenos", price: 170),
         Addon(name: "Fried green tomatoes", price: 70),
 
-      ]),food(name: "Flavour fusion", 
+      ]),Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
       price: "700/=", 
@@ -150,7 +150,7 @@ class Restaurant extends ChangeNotifier{
 
 
     //desserts
-    food(name: "Decadent Chocolate Lava Cake", 
+    Food(name: "Decadent Chocolate Lava Cake", 
       description: "Rich, molten, chocolate delight", 
       imagePath: "lib/images/desserts/d1.jpg", 
       price: "550/=", 
@@ -161,7 +161,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Crushed nuts (such as almonds or pecans)", price: 70),
 
       ]),
-      food(name: "Heavenly Lemon Berry Tart", 
+      Food(name: "Heavenly Lemon Berry Tart", 
       description: "Zesty, fruity, buttery crust.", 
       imagePath: "lib/images/desserts/d2.jpg", 
       price: "720/=", 
@@ -172,7 +172,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Espresso shot (for pairing)", price: 70),
 
       ]),
-      food(name: "Classic Apple Cinnamon Crisp", 
+      Food(name: "Classic Apple Cinnamon Crisp", 
       description: "Warm, comforting, cinnamon-spiced goodness.", 
       imagePath: "lib/images/desserts/d3.jpg", 
       price: "420/=", 
@@ -183,7 +183,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Candied ginger pieces", price: 70),
 
       ]),
-      food(name: "Indulgent Salted Caramel Cheesecake", 
+      Food(name: "Indulgent Salted Caramel Cheesecake", 
       description: "Creamy, caramel, salted perfection.", 
       imagePath: "lib/images/desserts/d4.jpg", 
       price: "890/=", 
@@ -198,7 +198,7 @@ class Restaurant extends ChangeNotifier{
 
 
     //drinks
-    food(name: "Ballantine's Bliss", 
+    Food(name: "Ballantine's Bliss", 
       description: "Gold Rush", 
       imagePath: "lib/images/drinks/ballantines.jpg", 
       price: "750/=", 
@@ -209,7 +209,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Strawberry garnish", price: 70),
 
       ]),
-      food(name: "Coca-Cola Fusion", 
+      Food(name: "Coca-Cola Fusion", 
       description: "Classic Elixir", 
       imagePath: "lib/images/drinks/coca cola.jpg", 
       price: "150/=", 
@@ -220,7 +220,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Lemon wheel", price: 70),
 
       ]),
-      food(name: "Jameson Jolt", 
+      Food(name: "Jameson Jolt", 
       description: " Irish Velvet", 
       imagePath: "lib/images/drinks/jameson.jpg", 
       price: "600/=", 
@@ -231,7 +231,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Edible flower petal", price: 70),
 
       ]),
-      food(name: "Red Label Revival", 
+      Food(name: "Red Label Revival", 
       description: " Whiskey Tango", 
       imagePath: "lib/images/drinks/red label.jpg", 
       price: "800/=", 
@@ -242,7 +242,7 @@ class Restaurant extends ChangeNotifier{
         Addon(name: "Fried green tomatoes", price: 70),
 
       ]),
-        food(name: "Pepsi Sparkler", 
+        Food(name: "Pepsi Sparkler", 
       description: "Frosty Fizz", 
       imagePath: "lib/images/drinks/pepsi.jpg", 
       price: "200/=", 
@@ -259,7 +259,7 @@ class Restaurant extends ChangeNotifier{
 G E T T E R S
 
 */
-List<food> get menu => _menu;
+List<Food> get menu => _menu;
 
 /*
 O P E R A T I O N S
