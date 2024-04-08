@@ -15,6 +15,8 @@ class Food{
     required this.category,
     required this.availableAddons,
   });
+
+  // Food get selectedAddons => true;
 }
 
 //food categories

@@ -1,7 +1,9 @@
 
 
 // import 'package:Food_delivery/models/Food.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/models/cart_item.dart';
 import 'package:food_delivery/models/food.dart';
 
 
@@ -265,22 +267,82 @@ List<Food> get menu => _menu;
 O P E R A T I O N S
 
 */
+//users cart
+final List<CartItem> _cart = [];
 
 //add to cart
+void addToCart(Food, food, List<Addon> selectedAddons) {
+  //see if there is a cart item already with the same food and selected addons
+  CartItem? cartItem = _cart.firstWhereOrNull((item){
+    //check if the food items are the same
+    bool isSameFood = item.food == food;
+
+    //check if the list of selected addons are the same
+    bool isSameAddons = 
+    ListEquality().equals(item.selectedAddons, selectedAddons);
+
+    return isSameFood && isSameAddons;
+  } );
+  // if item already exists, increase its quantity
+
+  if (cartItem != null) {
+    cartItem.quantity++;
+  }
+
+
+//otherwise, add a new cart item to the cart
+else{
+  _cart.add(CartItem(food: food, selectedAddons: selectedAddons));
+}
+notifyListeners();
+
+}
 
 
 //remove from cart
+void removeFromCart(CartItem cartItem) {
+  int cartIndex = _cart.indexOf(cartItem);
+  if (_cart[cartIndex].quantity > 1) {
+    _cart.removeAt(cartIndex);
+  }
+  notifyListeners();
+}
 
 
 //get total price of cart
+double getTotalPrice(){
+  double total = 0.0;
+
+  for (CartItem cartItem in _cart) {
+    // ignore: unused_local_variable
+    double itemTotal = cartItem.food.price as double;
+
+    for (Addon addon in cartItem.selectedAddons) {
+      itemTotal += addon.price;
+    }
+    total += itemTotal * cartItem.quantity;
+  }
+  return total;
+}
 
 
 
 //get total number of items from the cart
+int getTotalItemCount(){
+  int TotalItemCount = 0;
+
+  for (CartItem cartItem in _cart){
+    TotalItemCount+= cartItem.quantity;
+  }
+   return TotalItemCount;
+}
 
 
 //clear cart
-
+void clearCArt(){
+  _cart.clear();
+  notifyListeners();
+}
 /*
 H E L P E R S
 
