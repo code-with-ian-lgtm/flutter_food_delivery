@@ -264,6 +264,7 @@ G E T T E R S
 */
 List<Food> get menu => _menu;
 List<CartItem> get cart => _cart;
+String get deliveryAddress => _deliveryAddress;
 
 /*
 O P E R A T I O N S
@@ -271,6 +272,11 @@ O P E R A T I O N S
 */
 //users cart
 final List<CartItem> _cart = [];
+
+//delivery address
+
+String _deliveryAddress = '';
+
 
 //add to cart
 void addToCart(Food, food, List<Addon> selectedAddons) {
@@ -309,6 +315,12 @@ void removeFromCart(CartItem cartItem) {
   }
   notifyListeners();
 }
+ //update delivery address
+ void updateDeliveryAddress(String newAddress) {
+  _deliveryAddress = newAddress;
+  notifyListeners();
+ }
+
 
 
 //get total price of cart
@@ -368,7 +380,7 @@ String displayCartReceipt(){
 
   for (final CartItem in _cart){
     receipt.writeln(
-      "${CartItem.quantity} x ${CartItem.food.name} - ${_formatPrice(CartItem.food.price as double)}"
+      '${CartItem.quantity} x ${CartItem.food.name} - ${_formatPrice(CartItem.food.price as double)}'
     );
 
     if (CartItem.selectedAddons.isNotEmpty){
@@ -381,6 +393,8 @@ String displayCartReceipt(){
   receipt.writeln();
   receipt.writeln("Total Items: ${getTotalItemCount()}");
   receipt.writeln("Total price: ${_formatPrice(getTotalPrice())}");
+  receipt.writeln();
+  receipt.writeln("Delivering to: $deliveryAddress" );
 
   return receipt.toString();
 }

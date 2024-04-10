@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Services/auth_services.dart';
 import 'package:food_delivery/components/my_drawer_tile.dart';
 import 'package:food_delivery/pages/settings.dart';
 
@@ -7,6 +8,13 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void logout() {
+    //get auth services
+    // ignore: no_leading_underscores_for_local_identifiers
+    final _auth = AuthService();
+    _auth.signOut();
+
+  }
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
@@ -46,7 +54,9 @@ class MyDrawer extends StatelessWidget {
 
           MyDrawerTile(
             icon: Icons.logout, 
-            onTap: (){}, 
+            onTap: (){
+              logout();
+            }, 
             text: "Logout"),
 
           const SizedBox(height: 10,)

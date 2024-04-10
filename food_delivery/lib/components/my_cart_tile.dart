@@ -52,14 +52,10 @@ class MyCartTile extends StatelessWidget {
             
             
                     //food price
-                    Text('KES ' + cartItem.food.price.toString())
-            
-                  ],
-                ),
-                const Spacer(),
-            
-            
-                //increament or decrement
+                    Text('KES ' + cartItem.food.price.toString()),
+
+                    const SizedBox(height: 20,),
+                    //increament or decrement
                 QuantitySelector(
                   food: cartItem.food, 
                   onIncrement: (){
@@ -70,6 +66,13 @@ class MyCartTile extends StatelessWidget {
                     restaurant.removeFromCart(cartItem);
                   }, 
                 )
+            
+                  ],
+                ),
+                
+            
+            
+                
               ],
             ),
           ),

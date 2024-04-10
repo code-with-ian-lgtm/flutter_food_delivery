@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:food_delivery/models/restaurant.dart';
+import 'package:provider/provider.dart';
 
 class MyCurrentLocation extends StatelessWidget {
   const MyCurrentLocation({super.key});
@@ -16,7 +18,12 @@ class MyCurrentLocation extends StatelessWidget {
         MaterialButton(onPressed: () => Navigator.pop(context),
         child: const Text("Cancel"),
         ),
-         MaterialButton(onPressed: () => Navigator.pop(context),
+         MaterialButton(onPressed: () {
+          //update delivery address
+          var textController;
+          String newAddress = textController.text;
+          context.read<Restaurant>().updateDeliveryAddress(newAddress);
+         },
         child: const Text("Save"),
         )
       ],
@@ -42,9 +49,7 @@ class MyCurrentLocation extends StatelessWidget {
             child: Row(
               children: [
                 //address
-                Text("6981 hollywood"),
-                  
-                  
+                Consumer<Restaurant>(builder: (context, Restaurant, child)=> Text(Restaurant.deliveryAddress)),
                 //drop down menu
                 Icon(Icons.keyboard_arrow_down_rounded)
                   
