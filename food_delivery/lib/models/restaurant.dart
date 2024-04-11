@@ -329,7 +329,7 @@ double getTotalPrice(){
 
   for (CartItem cartItem in _cart) {
     // ignore: unused_local_variable
-    double itemTotal = cartItem.food.price as double;
+     double itemTotal = cartItem.food.price as double  ;
 
     for (Addon addon in cartItem.selectedAddons) {
       itemTotal += addon.price;
@@ -380,7 +380,7 @@ String displayCartReceipt(){
 
   for (final CartItem in _cart){
     receipt.writeln(
-      '${CartItem.quantity} x ${CartItem.food.name} - ${_formatPrice(CartItem.food.price as double)}'
+      '${CartItem.quantity} x ${CartItem.food.name} - '
     );
 
     if (CartItem.selectedAddons.isNotEmpty){
@@ -388,6 +388,8 @@ String displayCartReceipt(){
     }
     receipt.writeln();
   }
+
+  // ${_formatPrice(CartItem.food.price as double)}
 
   receipt.writeln("---------");
   receipt.writeln();

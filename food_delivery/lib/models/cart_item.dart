@@ -11,10 +11,12 @@ class CartItem {
     this.quantity = 1,
   });
 
-  // double get totalPrice {
-  //   double addonsPrice = selectedAddons.fold(0, (sum, Addon) => sum + Addon.price);
-  //   return (food.price + addonsPrice ) * quantity;
-  // }
+  double get totalPrice {
+    double addonsPrice = selectedAddons.fold(0, (sum, Addon) => sum + Addon.price);
+    return (food.price as double  ) * quantity;
+    // ignore: dead_code
+    return (addonsPrice)* quantity;
+  }
 
  
 }
