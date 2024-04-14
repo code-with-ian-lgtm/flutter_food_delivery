@@ -60,12 +60,25 @@ class _FoodPageState extends State<FoodPage> {
                     //food name
           Text(
             widget.food.name,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20
             ),
             ),
           const SizedBox(height: 10,),
+
+          // food price
+          Text(
+            widget.food.price.toString(),
+            style: TextStyle(
+              fontSize: 20,
+              color: Theme.of(context).colorScheme.primary
+            ),
+
+          ),
+
+          const SizedBox(height: 10),
+
         
         
           //food description
