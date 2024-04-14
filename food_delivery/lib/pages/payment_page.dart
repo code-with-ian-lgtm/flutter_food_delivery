@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-import 'package:food_delivery/components/my_button.dart';
 import 'package:food_delivery/pages/delivery.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
@@ -42,7 +42,7 @@ class _PaymentPageState extends State<PaymentPage> {
        actions: [
         //cancel button
         TextButton(onPressed: () => Navigator.pop(context),
-         child: Text("Cancel")),
+         child: const Text("Cancel")),
 
 
         //pay button
@@ -94,11 +94,58 @@ class _PaymentPageState extends State<PaymentPage> {
             }), 
             formKey: formKey),
 
-            Spacer(),
+            const Spacer(),
 
-            MyButton(onTap: userTappedPay, 
-            text: "Pay now"),
-            const SizedBox(height: 20,)
+            //slide to pay button 
+            Center(
+              child: SlideAction(
+                outerColor: Theme.of(context).colorScheme.primary,
+                text: "Slide to pay",
+                sliderButtonIcon: const Icon(
+                  Icons.payment_sharp,
+                  color: Colors.white,
+                  ),
+                  sliderRotate: false,
+                
+                onSubmit: (){
+                  if (formKey.currentState!.validate()){
+      //only show dialog if form is valid
+      showDialog(
+        context: context,
+       builder: ((context) => 
+       AlertDialog(
+        title: const Text("Confirm Payment"),
+       content: SingleChildScrollView(
+        child: ListBody(
+          children: [
+            Text("Card Number: $cardNumber"),
+            Text("Expiry date: $expiryDate"),
+            Text("Card Holder Name: $cardHolderName"),
+            Text("CVV: $cvvCode"),
+
+          ],
+        ),
+       ),
+       actions: [
+        //cancel button
+        TextButton(onPressed: () => Navigator.pop(context),
+         child: const Text("Cancel")),
+
+
+        //pay button
+        TextButton(onPressed: (){
+          Navigator.pop(context);
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> DeliveryProgressPage()));
+        }, child: const Text("Pay"))
+       ],
+       )));
+    }
+                  return null;
+                },
+              ),
+            )
+
+           
           
           
 

@@ -16,7 +16,7 @@ class Restaurant extends ChangeNotifier{
     Food(name: "Classic cheese Burger", 
     description: "A juicy beef patty with melted cheddar, lettuce, tomato", 
     imagePath: "lib/images/burger/b1.jpg",
-    price: "800/=", 
+    price: "800", 
     category: FoodCategory.burgers, 
     availableAddons: [
       Addon(name: "Extra cheese", price: 50),
@@ -28,7 +28,7 @@ class Restaurant extends ChangeNotifier{
     Food(name: "Juicy stack burger", 
     description: "Layers of savory, juicy bliss.",
      imagePath: "lib/images/burger/b2.jpg",
-      price: "1200/=", 
+      price: "1200", 
       category: FoodCategory.burgers, 
       availableAddons: [
         Addon(name: "Crispy bacon strips", price: 210),
@@ -39,7 +39,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
-      price: "700/=", 
+      price: "700", 
       category: FoodCategory.burgers, 
       availableAddons: [
         Addon(name: "Spicy kimci", price: 70),
@@ -64,7 +64,7 @@ class Restaurant extends ChangeNotifier{
     Food(name: "Garden Harvest Medley", 
       description: "Fresh veggies, crisp greens, wholesome.", 
       imagePath: "lib/images/salads/s1.jpg", 
-      price: "200/=", 
+      price: "200", 
       category: FoodCategory.salads, 
       availableAddons: [
         Addon(name: "Grilled chicken strips", price: 70),
@@ -75,7 +75,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Dried cranberries or raisins", 
       description: "Tangy zest, crunchy bites, refreshing.", 
       imagePath: "lib/images/salads/s2.jpg", 
-      price: "150/=", 
+      price: "150", 
       category: FoodCategory.salads, 
       availableAddons: [
         Addon(name: "Avocado slices", price: 70),
@@ -86,7 +86,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Mediterranean Bliss Bowl", 
       description: " Olives, feta, herbs, Mediterranean essence.", 
       imagePath: "lib/images/salads/s3.jpg", 
-      price: "300/=", 
+      price: "300", 
       category: FoodCategory.salads, 
       availableAddons: [
         Addon(name: "Roasted chickpeas", price: 70),
@@ -112,7 +112,7 @@ class Restaurant extends ChangeNotifier{
     Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
-      price: "700/=", 
+      price: "700", 
       category: FoodCategory.sides, 
       availableAddons: [
         Addon(name: "Spicy kimci", price: 70),
@@ -122,7 +122,7 @@ class Restaurant extends ChangeNotifier{
       ]),Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
-      price: "700/=", 
+      price: "700", 
       category: FoodCategory.sides, 
       availableAddons: [
         Addon(name: "Spicy kimci", price: 70),
@@ -132,7 +132,7 @@ class Restaurant extends ChangeNotifier{
       ]),Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
-      price: "700/=", 
+      price: "700", 
       category: FoodCategory.sides, 
       availableAddons: [
         Addon(name: "Spicy kimci", price: 70),
@@ -142,7 +142,7 @@ class Restaurant extends ChangeNotifier{
       ]),Food(name: "Flavour fusion", 
       description: "Culinary harmony in every bite", 
       imagePath: "lib/images/burger/b3.jpg", 
-      price: "700/=", 
+      price: "700", 
       category: FoodCategory.sides, 
       availableAddons: [
         Addon(name: "Spicy kimci", price: 70),
@@ -156,7 +156,7 @@ class Restaurant extends ChangeNotifier{
     Food(name: "Decadent Chocolate Lava Cake", 
       description: "Rich, molten, chocolate delight", 
       imagePath: "lib/images/desserts/d1.jpg", 
-      price: "550/=", 
+      price: "550", 
       category: FoodCategory.desserts, 
       availableAddons: [
         Addon(name: "Warm caramel sauce", price: 70),
@@ -167,7 +167,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Heavenly Lemon Berry Tart", 
       description: "Zesty, fruity, buttery crust.", 
       imagePath: "lib/images/desserts/d2.jpg", 
-      price: "720/=", 
+      price: "720", 
       category: FoodCategory.desserts, 
       availableAddons: [
         Addon(name: "Mint leaf garnish", price: 70),
@@ -189,7 +189,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Indulgent Salted Caramel Cheesecake", 
       description: "Creamy, caramel, salted perfection.", 
       imagePath: "lib/images/desserts/d4.jpg", 
-      price: "890/=", 
+      price: "890", 
       category: FoodCategory.desserts, 
       availableAddons: [
         Addon(name: "Whiskey-infused whipped cream", price: 70),
@@ -204,7 +204,7 @@ class Restaurant extends ChangeNotifier{
     Food(name: "Ballantine's Bliss", 
       description: "Gold Rush", 
       imagePath: "lib/images/drinks/ballantines.jpg", 
-      price: "750/=", 
+      price: "750", 
       category: FoodCategory.drinks, 
       availableAddons: [
         Addon(name: "Ginger slice", price: 70),
@@ -226,7 +226,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Jameson Jolt", 
       description: " Irish Velvet", 
       imagePath: "lib/images/drinks/jameson.jpg", 
-      price: "600/=", 
+      price: "600", 
       category: FoodCategory.drinks, 
       availableAddons: [
         Addon(name: "Blueberry skewer", price: 70),
@@ -237,7 +237,7 @@ class Restaurant extends ChangeNotifier{
       Food(name: "Red Label Revival", 
       description: " Whiskey Tango", 
       imagePath: "lib/images/drinks/red label.jpg", 
-      price: "800/=", 
+      price: "800", 
       category: FoodCategory.drinks, 
       availableAddons: [
         Addon(name: "Pineapple wedge", price: 70),
@@ -248,7 +248,7 @@ class Restaurant extends ChangeNotifier{
         Food(name: "Pepsi Sparkler", 
       description: "Frosty Fizz", 
       imagePath: "lib/images/drinks/pepsi.jpg", 
-      price: "200/=", 
+      price: "200", 
       category: FoodCategory.drinks, 
       availableAddons: [
         Addon(name: "Pomegranate seed", price: 70),
@@ -329,7 +329,7 @@ double getTotalPrice(){
 
   for (CartItem cartItem in _cart) {
     // ignore: unused_local_variable
-     double itemTotal = cartItem.food.price as double  ;
+     double itemTotal = double.parse(cartItem.food.price)   ;
 
     for (Addon addon in cartItem.selectedAddons) {
       itemTotal += addon.price;
