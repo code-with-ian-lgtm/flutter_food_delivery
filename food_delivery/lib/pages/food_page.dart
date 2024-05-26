@@ -57,7 +57,7 @@ class _FoodPageState extends State<FoodPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: [
-                    //food name
+                    //food name and names
           Text(
             widget.food.name,
             style: const TextStyle(
